@@ -8,9 +8,8 @@
         <!-- Link to your script file(s) and CSS in here somewhere -->
     </head>
     <body onload="showHideShots()">
-
 		<form id="userinput" class="" action="javascript:void(0);">
-			<input type="radio" id="rps" name="game" value="rps" checked="checked" onclick="showHideShots()">
+			<input type="radio" id="rps" name="game" value="rps" onclick="showHideShots()" checked>
 			<label for="rps">Play rock, paper, scissors?</label>
 			<br><br>
 			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="showHideShots()">
@@ -36,13 +35,10 @@
 		<br><br>
     <button type="button" id="play" onclick="playGame()">Play</button>
     <button type="button" id="startover" onclick="startOver()">Start Over</button>
-
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-    
     <!-- You will want to include something hidden by default, like a <div> or <p> that you can show to -->
     <!-- display the results of the game. Your startOver() function should also clear the result and hide -->
     <!-- the block again. -->
-
     </body>
 </html>
