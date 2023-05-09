@@ -14,40 +14,27 @@
             <h3>Rock, Paper, Scissors</h3>
 			<div class="container">
 				<div class="mode-selector">
-					<input type="radio" id="rps" name="mode" value="rps" checked>
+					<input type="radio" id="rps" name="mode" class="mode-selection" checked>
 					<label id="play-rps">Play rock, paper, scissors?</label>
 					<br><br>
-					<input type="radio" id="rpsls" name="mode" value="rpsls">
+					<input type="radio" id="rpsls" name="mode" class="mode-selection">
 					<label id="play-rpsls">Play rock, paper, scissors, lizard, Spock?</label>
 					<br><br>
-					<input type="checkbox" id="opponent" name="playtype" value="opponent">
+					<input type="checkbox" id="opponent" name="playtype" value="opponent" class="mode-selection">
 					<label id="play-opponent">Play against an opponent?</label>
 					<br><br>
 				</div>
-			</div>
+			
 			<div class="inputs"></div>
 			<br><br>
 			<div class="results"></div>
 			<br><br>
-        </div>
-		<div class="game">
-			<input type="radio" id="rock" name="shot" value="rock" class="rps shots" checked>
-			<label class="shots rps">Rock</label>
-			<input type="radio" id="paper" name="shot" value="paper" class="rps shots">
-			<label class="shots rps">Paper</label>
-			<input type="radio" id="scissors" name="shot" value="scissors" class="rps shots">
-			<label class="shots rps">Scissors</label>
-			<input type="radio" id="lizard" name="shot" value="lizard" class="rpsls shots">
-			<label class="shots rpsls">Lizard</label>
-			<input type="radio" id="spock" name="shot" value="spock" class="rpsls shots">
-			<label class="shots rpsls">Spock</label>
-<!--			<br/><br/>
-			<input type="submit" id="play" name="controls" value="Play">
-      <input type="submit" id="startover" name="controls" value="Start Over"> -->
-</div>
-		<br><br>
-    <button type="button" id="play" onclick="playGame()">Play</button>
-    <button type="button" id="startover" onclick="startOver()">Start Over</button>
+     <div class="buttons">   
+    <button type="button" class="play-button">Play</button>
+    <button type="button" class="start-over-button">Start Over</button>
+	</div>
+	</div>
+	</div>
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
     <!-- You will want to include something hidden by default, like a <div> or <p> that you can show to -->
