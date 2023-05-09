@@ -76,5 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
         user_selection_buttons.forEach((b) => {
             b.checked = false;
         });
+
+        const opponent_checkbox = document.getElementById("opponent");
+        opponent_checkbox.checked = false;
+
+        
     })
 })
