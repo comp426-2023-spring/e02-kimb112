@@ -84,5 +84,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const user_selection_buttons_container = document.querySelector(".inputs");
         user_selection_buttons_container.innerHTML = "";
-    })
+    });
 })
