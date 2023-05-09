@@ -1,8 +1,10 @@
 body {
     font-size: large;
     text-align: center;
+    flex-direction: column;
 }
 
 h3 {
     text-align: center;
+    font-size: x-large;
 }
