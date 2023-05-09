@@ -1,3 +1,4 @@
+import {rps, rpsls} from "./rpsls.js"
 // This function shows and hides the shot selection in the interface based 
 // on whether or not the #opponent checkbox is checked
 function showHideShots() {
