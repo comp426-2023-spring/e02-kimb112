@@ -1,13 +1,7 @@
-// If you would like to see some examples of similar code to make an interface interact with an API, 
-// check out the coin-server example from a previous COMP 426 semester.
-// https://github.com/jdmar3/coinserver
-
 import { rps, rpsls } from "./rpsls.js";
 
 
-// will need: show result, get u mode, get u input, then add event listeners to track and update on interaction
-
-// show result ("find" result dynamically within function):
+// result
 function show_result(outcome, play_opponent) {
     // first initialize result container
     const result_container = document.querySelector(".results");
