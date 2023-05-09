@@ -68,4 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         show_result(move, play_opponent)
     });
+
+    start_over.addEventListener("click", () => {
+        const result_container = document.querySelector(".results");
+        result_container.innerHTML = "";
+    })
 })
