@@ -41,3 +41,13 @@ function get_user_input() {
     const user_selection_button = document.querySelector(".selections-button:checked");
     return user_selection_button ? user_selection_button.getAttribute("selection-summary") : null;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const start_over = document.querySelector(".start-over-button");
+    const play = document.querySelector(".play-button");
+
+    play.addEventListener("click", () => {
+        const play_opponent = document.getElementById("opponent").checked;
+        const mode = get_user_mode();
+    })
+})
