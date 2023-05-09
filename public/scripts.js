@@ -1,26 +1,26 @@
 import {rps, rpsls} from "./rpsls.js"
-// This function shows and hides the shot selection in the interface based 
-// on whether or not the #opponent checkbox is checked
-function showHideShots() {
-    // Get the info from the checkbox
-          let check = document.getElementById('opponent');
-    // Check if the checkbox is checked and show or hide options accordingly
-        if (check.checked == true) {
-    // Here, instead of just showing all of the options, use similar logic to 
-    // check which of the game radio buttons is checked and show only those
-    // options relevant to the game being selected (rps or rpsls). You can 
-    // use similar jQuery 
-            $('.shots').show()
-        } else {
-            $('.shots').hide()
-        }
+
+function show_result(shot, play_opponent) {
+    const result_container = document.querySelector(".results");
+    if (play_opponent == true) {
+        result_container.innerHTML = 
+        `
+        <div class="result-summary">
+            <span>Player:</span>
+            <span>${shot.player}</span>
+        </div>
+        <div class="result-summary">
+            <span>Opponent:</span>
+            <span>${shot.opponent}</span>
+        </div>
+        <div class="result-summary">
+            <span>Result:</span>
+            <span>${shot.result}</span>
+        </div>
+        `
     }
-    // This function clears the input form and also resets the shot selection
-    // radio buttons. 
-    function startOver () {
-        document.getElementById('userinput').reset();
-        showHideShots();
-    }
+}
+
     
     async function playGame () {
         // Get which game is being played based on the value in the form
