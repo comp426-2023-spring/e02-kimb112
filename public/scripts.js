@@ -108,6 +108,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 <br />
                 `;
             }
+            else if (mode = "rpsls") {
+                user_selection_buttons_container.innerHTML =
+                `
+                <input type="radio" class="selections-button" name="user-choice" value="rock" selection-summary="rock"> Rock
+                <br />
+                <input type="radio" class="selections-button" name="user-choice" value="paper" selection-summary="rock"> Paper
+                <br />
+                <input type="radio" class="selections-button" name="user-choice" value="scissors selection-summary="rock"> Scissors
+                <br />
+                <input type="radio" class="selections-button" name="user-choice" value="lizard" selection-summary="rock"> Lizard
+                <br />
+                <input type="radio" class="selections-button" name="user-choice" value="spock" selection-summary="rock"> Spock
+                <br />
+                `;
+            }
         })
     })
 })
