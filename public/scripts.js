@@ -24,20 +24,18 @@ function show_result(outcome, play_opponent) {
             </div>
             <div class="result-summary">
                 <span class="result-label">Result:</span>
-                <span class="result-output">${outcome.result}<strong></span>
+                <span class="result-output">${outcome.result}</span>
             </div>`;
     // single player message innerHTML
     } else {
         result_container.innerHTML = `
             <div class="result-summary">
-                <span class="result-output"><strong>${outcome.player.toUpperCase()}<strong></span>
+                <span class="result-output">${outcome.player}</span>
             </div>`;
     }
 }
 
-// create initial helpers to prepare for dynamic result display:
 
-// establish input values:
 // get user mode
 function get_user_mode() {
     const user_mode_button = document.querySelector(".mode-selection:checked");
@@ -49,8 +47,6 @@ function get_user_input() {
     return user_selection_button ? user_selection_button.getAttribute("selection-summary") : null;
 }
 
-// now begin to add event listeners to produce the targetted dynamic result:
-// start with DOM content function, use all my included doc content as arg
 document.addEventListener("DOMContentLoaded", () => {
     // initialize buttons
     const start_over_button = document.querySelector(".start-over-button");
@@ -80,43 +76,33 @@ document.addEventListener("DOMContentLoaded", () => {
             } 
         }
 
-        // show result w/ new args
         show_result(outcome, play_opponent);
 
-        // hide play button so that user will intuitively start over and not be frustrated by unexpected actions
         play_button.setAttribute("hidden", true);
     }); 
     
-    // next step: give START OVER button functionality w/ event listener (on click):
     start_over_button.addEventListener("click", () => {
         const result_container = document.querySelector(".results");
-        // keep container HTML blank unless causes problems? Do this for others that don't have valid HTML
         result_container.innerHTML = "";
 
-        // reset buttons, prepare for inputs, and reset opponent checkbox (out of caution bc not really button)
-
-        // loop through rps or rpsls selection buttons and reset them (like rock, paper, scissors, etc.)
-        // leave rps or rpsls selected
+        // reset rps/rpsls selection buttons
         const user_selection_buttons = document.querySelectorAll(".selections-button");
         user_selection_buttons.forEach((b) => {
             b.checked = false;
         });
         
-        // reset checkbox separately
+        // reset checkbox
         const opp_checkbox = document.getElementById("opponent");
         opp_checkbox.checked = false;
         
-        // unhide play button on reset
+        //show button
         play_button.removeAttribute("hidden");
         
-        // container for inputs, prepare container for final HTML to show (depending on rps or rpsls)
         const user_selection_buttons_container = document.querySelector(".inputs");
         user_selection_buttons_container.innerHTML = "";
     });
 
-    // for mode,
     document.querySelectorAll(".mode-selection").forEach((user_mode_button) => {
-        // add what will essentially be an observer, watching for button change
         user_mode_button.addEventListener("change", () => {
             const user_selection_buttons_container = document.querySelector(".inputs");
             const play_opponent = document.getElementById("opponent").checked;
