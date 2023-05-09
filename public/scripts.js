@@ -49,5 +49,22 @@ document.addEventListener("DOMContentLoaded", () => {
     play.addEventListener("click", () => {
         const play_opponent = document.getElementById("opponent").checked;
         const mode = get_user_mode();
+
+        var move;
+        if (mode == "rps") {
+            if (play_opponent == true) {
+                const user_selection = get_user_input();
+                move = rps(user_selection)
+            } else {
+                shot = rps();
+            }
+        } else if (mode = "rpsls") {
+            if (play_opponent == true) {
+                const user_selection = get_user_input();
+                shot = rpsls(user_selection);
+            } else {
+                shot = rpsls();
+            }
+        }
     })
 })
