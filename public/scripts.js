@@ -123,6 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <br />
                 `;
             }
-        })
+        });
     })
 })
