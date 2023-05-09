@@ -66,6 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 shot = rpsls();
             }
         }
-        
+        show_result(move, play_opponent)
     });
 })
