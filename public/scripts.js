@@ -80,6 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const opponent_checkbox = document.getElementById("opponent");
         opponent_checkbox.checked = false;
 
-        
+        play.removeAttribute("hidden");
+
+        const user_selection_buttons_container = document.querySelector(".inputs");
+        user_selection_buttons_container.innerHTML = "";
     })
 })
