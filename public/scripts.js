@@ -85,4 +85,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const user_selection_buttons_container = document.querySelector(".inputs");
         user_selection_buttons_container.innerHTML = "";
     });
+
+    document.querySelectorAll(".mode-selection").forEach((user_mode_button) => {
+        user_mode_button.addEventListener("change", () => {
+            const user_selection_buttons_container = document.querySelector(".inputs");
+            const play_opponent = document.getElementById("opponent").checked;
+
+            if (play_opponent == false) {
+                user_selection_buttons_container.innerHTML = "";
+                return;
+            }
+
+            const mode = get_user_mode();
+            if (mode = "rps") {
+                user_selection_buttons_container.innerHTML =
+                `
+                <input type="radio" class="selections-button" name="user-choice" value="rock" selection-summary="rock"> Rock
+                <br />
+                <input type="radio" class="selections-button" name="user-choice" value="paper" selection-summary="rock"> Paper
+                <br />
+                <input type="radio" class="selections-button" name="user-choice" value="scissors selection-summary="rock"> Scissors
+                <br />
+                `;
+            }
+        })
+    })
 })
