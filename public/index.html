@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>RPS/RPSLS</title>
+		<meta charset="UTF-8">
+        <title>RPS-RPSLS</title>
 		<link href="./styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-		<script src="./scripts.js"></script>
+		<script src="./scripts.js" type="module"></script>
         <!-- Link to your script file(s) and CSS in here somewhere -->
     </head>
-    <body onload="showHideShots()">
-        <div class="header">
-            <h3 id="title">Rock, Paper, Scissors</h3>
+    <body>
+		    <!-- Your interface markup goes here -->
+        <div class="container-wrapper">
+            <h3>Rock, Paper, Scissors</h3>
+			<div class="container">
+				<div class="mode-selector">
+					<input type="radio" id="rps" name="mode" value="rps" checked>
+					<label id="play-rps">Play rock, paper, scissors?</label>
+					<br><br>
+					<input type="radio" id="rpsls" name="mode" value="rpsls">
+					<label id="play-rpsls">Play rock, paper, scissors, lizard, Spock?</label>
+					<br><br>
+					<input type="checkbox" id="opponent" name="playtype" value="opponent">
+					<label id="play-opponent">Play against an opponent?</label>
+					<br><br>
+				</div>
+			</div>
+			<div class="inputs"></div>
+			<br><br>
+			<div class="results"></div>
+			<br><br>
         </div>
 		<div class="game">
-			<input type="radio" id="rps" name="game" value="rps" onclick="showHideShots()" checked>
-			<label for="rps">Play rock, paper, scissors?</label>
-			<br><br>
-			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="showHideShots()">
-			<label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label>
-			<br><br>
-			<input type="checkbox" id="opponent" name="playtype" value="opponent" onclick="showHideShots()">
-			<label for="opponent">Play against an opponent?</label>
-			<br><br>
 			<input type="radio" id="rock" name="shot" value="rock" class="rps shots" checked>
 			<label class="shots rps">Rock</label>
 			<input type="radio" id="paper" name="shot" value="paper" class="rps shots">
