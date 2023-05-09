@@ -31,3 +31,13 @@ function show_result(shot, play_opponent) {
         `;
     }
 }
+
+function get_user_mode() {
+    const user_mode_button = document.querySelector(".mode-selection:checked");
+    return user_mode_button ? user_mode_button.getAttribute("id") : null;
+}
+
+function get_user_input() {
+    const user_selection_button = document.querySelector(".selections-button:checked");
+    return user_selection_button ? user_selection_button.getAttribute("selection-summary") : null;
+}
