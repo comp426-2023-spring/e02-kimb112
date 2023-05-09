@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Rock</title>
+        <title>RPS/RPSLS</title>
 		<link href="./styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 		<script src="./scripts.js"></script>
         <!-- Link to your script file(s) and CSS in here somewhere -->
     </head>
     <body onload="showHideShots()">
-		<form id="userinput" action="javascript:void(0);">
+        <div class="header">
+            <h3 id="title">Rock, Paper, Scissors</h3>
+        </div>
+		<div class="game">
 			<input type="radio" id="rps" name="game" value="rps" onclick="showHideShots()" checked>
 			<label for="rps">Play rock, paper, scissors?</label>
 			<br><br>
@@ -31,7 +34,7 @@
 <!--			<br/><br/>
 			<input type="submit" id="play" name="controls" value="Play">
       <input type="submit" id="startover" name="controls" value="Start Over"> -->
-		</form>
+</div>
 		<br><br>
     <button type="button" id="play" onclick="playGame()">Play</button>
     <button type="button" id="startover" onclick="startOver()">Start Over</button>
