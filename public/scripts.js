@@ -72,5 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
     start_over.addEventListener("click", () => {
         const result_container = document.querySelector(".results");
         result_container.innerHTML = "";
+        const user_selection_buttons = document.querySelectorAll(".selections-button");
+        user_selection_buttons.forEach((b) => {
+            b.checked = false;
+        })
     })
 })
