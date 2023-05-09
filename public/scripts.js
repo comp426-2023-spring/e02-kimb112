@@ -1,35 +1,43 @@
+// If you would like to see some examples of similar code to make an interface interact with an API, 
+// check out the coin-server example from a previous COMP 426 semester.
+// https://github.com/jdmar3/coinserver
+
 import { rps, rpsls } from "./rpsls.js";
 
+
+// will need: show result, get u mode, get u input, then add event listeners to track and update on interaction
+
 // show result ("find" result dynamically within function):
-function show_result(shot, play_opponent) {
-    // initialize results
+function show_result(outcome, play_opponent) {
+    // first initialize result container
     const result_container = document.querySelector(".results");
-    // opponent play message
+    // opponent play message inner HTML
     if (play_opponent == true) {
         result_container.innerHTML = `
             <div class="result-summary">
-                <span>Player:</span>
-                <span>${shot.player}</span>
+                <span class="result-owner">Player:</span>
+                <span class="result-output">${outcome.player}</span>
             </div>
             <div class="result-summary">
-                <span>Opponent:</span>
-                <span>${shot.opponent}</span>
+                <span class="result-owner">Opponent:</span>
+                <span class="result-output">${outcome.opponent}</span>
             </div>
             <div class="result-summary">
-                <span>Result:</span>
-                <span>${shot.result}</span>
+                <span class="result-label">Result:</span>
+                <span class="result-output">${outcome.result}<strong></span>
             </div>`;
-    // single player
+    // single player message innerHTML
     } else {
         result_container.innerHTML = `
             <div class="result-summary">
-                <span>${shot.player}</span>
+                <span class="result-output"><strong>${outcome.player.toUpperCase()}<strong></span>
             </div>`;
     }
 }
 
 // create initial helpers to prepare for dynamic result display:
 
+// establish input values:
 // get user mode
 function get_user_mode() {
     const user_mode_button = document.querySelector(".mode-selection:checked");
@@ -45,42 +53,42 @@ function get_user_input() {
 // start with DOM content function, use all my included doc content as arg
 document.addEventListener("DOMContentLoaded", () => {
     // initialize buttons
-    const start_over = document.querySelector(".start-over-button");
-    const play = document.querySelector(".play-button");
+    const start_over_button = document.querySelector(".start-over-button");
+    const play_button = document.querySelector(".play-button");
     
     // create nested event listener for play button (activate on "click")
-    play.addEventListener("click", () => {
+    play_button.addEventListener("click", () => {
         // initialize opponent? and mode? constants
         const play_opponent = document.getElementById("opponent").checked;
         const mode = get_user_mode();
         
         // game logic: call rps and rpsls from rpsls.js
-        var shot;
+        var outcome;
         if (mode == "rps") {
             if (play_opponent == true) {
                 const user_selection = get_user_input();
-                shot = rps(user_selection)
+                outcome = rps(user_selection)
             } else {
-                shot = rps();
+                outcome = rps();
             }
         } else if (mode == "rpsls") {
             if (play_opponent == true) {
                 const user_selection = get_user_input();
-                shot = rpsls(user_selection);
+                outcome = rpsls(user_selection);
             } else {
-                shot = rpsls();
+                outcome = rpsls();
             } 
         }
 
         // show result w/ new args
-        show_result(shot, play_opponent);
+        show_result(outcome, play_opponent);
 
         // hide play button so that user will intuitively start over and not be frustrated by unexpected actions
-        play.setAttribute("hidden", true);
+        play_button.setAttribute("hidden", true);
     }); 
     
     // next step: give START OVER button functionality w/ event listener (on click):
-    start_over.addEventListener("click", () => {
+    start_over_button.addEventListener("click", () => {
         const result_container = document.querySelector(".results");
         // keep container HTML blank unless causes problems? Do this for others that don't have valid HTML
         result_container.innerHTML = "";
@@ -99,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         opp_checkbox.checked = false;
         
         // unhide play button on reset
-        play.removeAttribute("hidden");
+        play_button.removeAttribute("hidden");
         
         // container for inputs, prepare container for final HTML to show (depending on rps or rpsls)
         const user_selection_buttons_container = document.querySelector(".inputs");
