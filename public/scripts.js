@@ -75,6 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const user_selection_buttons = document.querySelectorAll(".selections-button");
         user_selection_buttons.forEach((b) => {
             b.checked = false;
-        })
+        });
     })
 })
